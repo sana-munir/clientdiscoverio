@@ -73,7 +73,7 @@ const Auth = () =>{
                     <Button type="submit" fullWidth variant="contained" color="primary" sx={styles.submit}>
                     { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
-                    <GoogleLogin
+                    <GoogleLogin // renderProps.onClick ensures the button triggers the Google Sign-In process, and renderProps.disabled disables the button when needed.
                       render={(renderProps) => (
                         <Button sx={styles.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
                           Google Sign In

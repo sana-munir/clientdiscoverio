@@ -5,8 +5,11 @@ import Widget from "../../components/widget/Widget";
 import Featured from "../../components/featured/Featured";
 
 const AdminHome = () => {
+  const user = JSON.parse(localStorage.getItem('profile2'));
   return (
     <div className="home">
+    {user? (
+      <>
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
@@ -18,6 +21,12 @@ const AdminHome = () => {
           <Featured />
         </div>
         </div>
+        </>
+    ) : (
+      <div>
+        Not logged in as admin!
+      </div>
+    )}
     </div>
   );
 };

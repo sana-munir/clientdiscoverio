@@ -14,7 +14,7 @@ const Intro = () => {
   const transition = { duration: 2, type: "spring" };
   const navigate = useNavigate();
   return (
-    <div className="Intro" id="Intro">
+    <div className="Intro">
       <div className="i-left">
         <div className="i-name">
           <span>Hey! Welcome to</span>

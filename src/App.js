@@ -10,7 +10,6 @@ import LandingPage from './components/Landing/landingPage';
 import AdminHome from './admin/pages/adminhome/AdminHome';
 import Login from "./admin/pages/login/Login"
 import List from "./admin/pages/list/List";
-import Single from "./admin/pages/single/Single";
 import Listp from "./admin/pages/listp/Listp";
 import Contact from './components/Landing/components/Contact/Contact';
 import About from './components/Landing/components/Intro/Intro';
@@ -48,9 +47,7 @@ const App = () =>{
         <Route path='/admin' element={<AdminHome />} />
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/users" element={<List />} />
-        <Route path="/admin/users/:userId" element={<Single />} />
         <Route path="/admin/posts" element={<Listp />} />
-        <Route path="/admin/:postId" element={<Single />} />
             
       </Routes>
       </Container>

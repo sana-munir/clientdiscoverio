@@ -10,3 +10,6 @@ const icon = () => (
 );
 
 export default icon;
+//The path element within the SVG defines the shape of the icon.
+//The fill attribute sets the color of the icon to the current text color (currentColor), making it adapt to the text color of its parent elements.
+//The d attribute contains the path data, a string that defines the shape of the SVG path.

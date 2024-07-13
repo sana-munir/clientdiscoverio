@@ -88,22 +88,21 @@
   border-radius: 5px;
 }
 .footer {
-  background: #333; /* Dark background for contrast */
+  background: #333; 
   padding: 20px;
   display: flex;
-  justify-content: space-evenly; /* Distribute buttons evenly */
+  justify-content: space-evenly; 
   align-items: center;
 }
 
 .footer-button {
-/* Light background for buttons */
-  color: #ffffff; /* Dark text */
+  color: #ffffff; 
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .footer-button:hover {
-  color: #00a2ff; /* Change color on hover */
+  color: #00a2ff; 
 }
 
 /*<------------------------>*/

@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 const Sidebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile2')));
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
     navigate('/');
