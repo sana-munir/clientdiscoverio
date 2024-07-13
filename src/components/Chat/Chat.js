@@ -2,7 +2,6 @@ import React, {useState, useEffect, useRef} from 'react';
 import './Chat.css';
 import SearchOutlined from '@mui/icons-material/SearchOutlined';
 import { userChats } from '../../api';
-import NavIcons from './NavIcons';
 import {io} from 'socket.io-client';
 import ChatBox from './ChatBox';
 import Conversation from './Conversation';
@@ -40,21 +39,31 @@ const Chat = () =>{
         socket.current.on("get-users", (users) => {
             setOnlineUsers(users);
         });
-    }, [user]);
+
+        // Cleanup function to disconnect from the socket
+        return () => {
+            socket.current.disconnect();
+        };
+    }, [userId]);
 
     // Send Message to socket server
     useEffect(() => {
-        if (sendMessage!==null) {
-            socket.current.emit("send-message", sendMessage);}
+        if (sendMessage) {
+            socket.current.emit("send-message", sendMessage);
+        }
     }, [sendMessage]);
 
     // Get the message from socket server
     useEffect(() => {
-        socket.current.on("recieve-message", (data) => {
-            console.log(data)
+        socket.current.on("receive-message", (data) => {
+            console.log(data);
             setReceivedMessage(data);
-        }
-    );
+        });
+
+        // Cleanup listener on unmount
+        return () => {
+            socket.current.off("receive-message");
+        };
     }, []);
 
     const checkOnlineStatus = (chat) => {
@@ -68,7 +77,7 @@ const Chat = () =>{
             {/* Left Side */}
             <div className="Left-side-chat">
             <div className="Search">
-                <input type="text" placeholder="#Explore" size={36}/>
+                <input type="text" placeholder="Search Users" size={36}/>
                 <div className="s-icon">
                     <SearchOutlined />
                 </div>
@@ -76,8 +85,9 @@ const Chat = () =>{
             <div className="Chat-container">
                 <h2>Chats</h2>
                 <div className="Chat-list">
-                {chats.map((chat) => (
+                {chats.map((chat, index) => (
                 <div
+                    key={index}
                     onClick={() => {
                     setCurrentChat(chat);
                 }}
@@ -95,9 +105,6 @@ const Chat = () =>{
 
             {/*  Right Side */}
             <div className="Right-side-chat">
-            <div style={{ width: "20rem", alignSelf: "flex-end" }}>
-                <NavIcons />
-            </div>
             <ChatBox
                 chat={currentChat}
                 currentUser={userId}

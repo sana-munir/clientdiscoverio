@@ -12,12 +12,18 @@ import Login from "./admin/pages/login/Login"
 import List from "./admin/pages/list/List";
 import Single from "./admin/pages/single/Single";
 import Listp from "./admin/pages/listp/Listp";
+import Contact from './components/Landing/components/Contact/Contact';
+import About from './components/Landing/components/Intro/Intro';
 import "./admin/style/dark.scss";
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 import Chat from './components/Chat/Chat';
 
 const App = () =>{
   const user = JSON.parse(localStorage.getItem('profile'));
+  const PrivateRoute = ({ user, redirectTo, children }) => {
+    return user ? children : <Navigate to={redirectTo} />;
+  };
+  
     return (
       <GoogleOAuthProvider
        clientId='130046574009-dnm5mece8p7nia55ehd39eritnkau1q8.apps.googleusercontent.com'
@@ -26,7 +32,7 @@ const App = () =>{
       <Container maxWidth="xl">
       <Navbar />
       <Routes>
-        <Route path="/" element={user ? <Navigate to="/posts" /> : <Navigate to="/landing" />} />
+      <Route path="/" element={<PrivateRoute user={user} redirectTo="/landing"><Navigate to="/posts" /></PrivateRoute>} />
         <Route path='/posts' element={<Home />}/>
         <Route path='/landing' element={<LandingPage />} />
         <Route path='/posts/search' element={<Home />}/>
@@ -34,6 +40,8 @@ const App = () =>{
         <Route path='/creators/:name' element={<CreatorOrTag />} />
         <Route path='/tags/:name' element={<CreatorOrTag />} />
         <Route path='/auth' element= {<Auth />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/about' element={<About />} />
 
         <Route path="/chat" element={<Chat />} />
         

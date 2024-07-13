@@ -1,7 +1,8 @@
 const styles = {
   media: {
-    height: 0,
-    paddingTop: '56.25%',
+    height: '200px', // Fixed height for the image
+    width: '100%', // Ensures the image takes the full width of the card
+    objectFit: 'cover', // Ensures the image covers the entire area without distortion
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
@@ -16,7 +17,7 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderRadius: '15px',
-    height: '100%',
+    height: '500px', // Set a fixed height for the card to ensure uniformity
     position: 'relative',
   },
   overlay: {
@@ -51,5 +52,10 @@ const styles = {
     display: 'block',
     textAlign: 'initial',
   },
+  content: {
+    height: '80px', // Set a fixed height for the content to manage text overflow
+    overflow: 'hidden', // Ensure any overflowing text is hidden
+  },
 };
+
 export default styles;

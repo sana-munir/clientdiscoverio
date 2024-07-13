@@ -10,6 +10,7 @@ const Input = ({ name, handleChange, label, half, autoFocus, type, handleShowPas
       name={name}
       onChange={handleChange}
       variant="outlined"
+      color='secondary'
       required
       fullWidth
       label={label}

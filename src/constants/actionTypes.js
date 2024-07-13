@@ -13,3 +13,4 @@ export const AUTHADMIN = 'AUTHADMIN';
 export const LOGOUT = 'LOGOUT';
 export const FETCH_BY_CREATOR = 'FETCH_BY_CREATOR';
 export const FETCH_USERS = 'FETCH_USERS';
+export const UDELETE = 'UDELETE';

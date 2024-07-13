@@ -13,6 +13,7 @@ API.interceptors.request.use((req) => {
 export const fetchUsers = () => API.get('/user');
 export const userChats = (id) => API.get(`/chat/${id}`);
 export const getUser = (userId) => API.get(`/user/${userId}`);
+export const deleteUser = (id) => API.delete(`/user/${id}`);
 
 export const fetchPost = (id) => API.get(`/posts/${id}`);
 export const fetchPosts = (page) => API.get(`/posts?page=${page}`);

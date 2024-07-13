@@ -52,10 +52,10 @@ const Auth = () =>{
     
       const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
     return(
-        <Container component="main" maxWidth="xs">
-            <Paper sx={styles.paper} elevation={3}>
+        <Container sx={isSignup ? {...styles.container, ...styles.containerSignUp} : styles.container} component="main">
+            <Paper sx={styles.paper} elevation={4}>
                 <Avatar sx={styles.avatar}>
-                <LockOutlinedIcon />
+                <LockOutlinedIcon/>
                 </Avatar>
                 <Typography variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
                 <form style={styles.form} onSubmit={handleSubmit}>

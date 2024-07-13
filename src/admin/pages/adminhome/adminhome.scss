@@ -5,14 +5,14 @@
       flex: 6;
   
       .widgets,
-      .charts {
+      .place {
         display: flex;
         padding: 20px;
-        gap: 20px;
+        gap: 1px;
       }
   
       .charts {
-        padding: 5px 20px;
+        padding: 2px 10px;
       }
   
       .listContainer {

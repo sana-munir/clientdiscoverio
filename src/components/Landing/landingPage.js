@@ -1,4 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import Intro from "./components/Intro/Intro";
+import Places from "./components/Places/Places";
+import "./styles.css";
+import Works from "./components/Works/Works";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+
+function LandingPage() {
+  return (
+    <div
+      className="App"
+    >
+      <Intro />
+      <Places />
+      <Works />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+export default LandingPage;
+
+
+/*import React, { useEffect, useState } from 'react';
 import './styles.css';
 import bg4 from '../../assets/bg-4.mp4';
 import bg2 from '../../assets/bg-2.png';
@@ -68,7 +92,7 @@ const LandingPage = () => {
           style={{ width: '100%' }} // Adjust the style as needed
         />
         <img id="bg-2" src={bg2} alt="parallax" style={{ top: `-${scrollY * 0.5}px` , width: '100%' , display: 'block'}} />
-        <h1 id="title" style={{ fontSize: `${calculateFontSize()}px` }}>Welcome!</h1>
+        <h1 id="title" >Welcome userName!</h1>
         <img id="bg-3" src={bg3} alt="parallax" style={{ top: `-${scrollY}px`, transform: `scale(${1 + scrollY * 0.001})`, width: '100%' , display: 'block' }} />
       </div>
 
@@ -103,110 +127,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-
-/*import "./styles.css";
-import Plx from "react-plx";
-
-const LandingPage = () => {
-  return (
-    <div>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 700,
-            easing: "ease-in",
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.6,
-                property: "scale"
-              }
-            ]
-          }
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%",
-          zIndex: 100
-        }}
-      >
-        <img style={{ width: "100%" }} src="bg.png" alt="foreground" />
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 800,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 1.18,
-                property: "scale"
-              }
-            ]
-          }
-        ]}
-        style={{  
-          position: "fixed",
-          left: 0,
-          top: 0,
-          width: "100%"
-        }}
-      >
-        <img style={{ width: "100%" }} src="background1.jpg" alt="background" />
-      </Plx>
-      <Plx
-        parallaxData={[
-          {
-            start: 0,
-            end: 400,
-            properties: [
-              {
-                startValue: 1,
-                endValue: 0,
-                property: "opacity"
-              }
-            ]
-          }
-        ]}
-        style={{
-          position: "fixed",
-          left: 0,
-          top: "26vw",
-          width: "100%"
-        }}
-      >
-        <img
-          style={{
-            width: "30vw"
-          }}
-          src="/text-img.webp"
-          alt="Goonies"
-        />
-      </Plx>
-      <div
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          zIndex: 200,
-          paddingTop: "56%",
-          height: "400vh",
-          width: "100%"
-        }}
-      >
-        <div
-          style={{
-            background: "#000",
-            height: "100%"
-          }}
-        ></div>
-      </div>
-    </div>
-  );
-};
-export default LandingPage;*/
+*/

@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  align-items: center;
+  margin: -0.5rem -3.5rem;
+  position: relative;
+  margin-top: -7rem;
+}
+.f-content {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8rem;
+  gap: 4rem;
+  color: white;
+}
+.f-icons {
+  display: flex;
+  gap: 10rem;
+}
+.footer-button {
+  /* Light background for buttons */
+    color: #ffffff; /* Dark text */
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .footer-button:hover {
+    color: #361201; /* Change color on hover */
+  }
+
+@media screen and (max-width: 480px){
+  .f-content{
+    transform: scale(.5);
+  }
+}

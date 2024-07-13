@@ -59,7 +59,9 @@ export const deletePost = (id) => async (dispatch) => {
     await api.deletePost(id);
 
     dispatch({ type: DELETE, payload: id });
+    alert("Post deleted succcessfully.")
   } catch (error) {
+    alert("Failed to delete post.")
     console.log(error.message);
   }
 };

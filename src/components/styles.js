@@ -1,6 +1,7 @@
 const styles = {
     ul: {
-      justifyContent: 'space-around',
+      justifyContent: 'center',
+      alignItems:'center'
     },
   };
   export default styles;
