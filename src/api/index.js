@@ -5,10 +5,11 @@ API.interceptors.request.use((req) => {
     if(localStorage.getItem('profile')){
         req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
     }
+    else if(localStorage.getItem('profile2')){
+        req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile2')).token}`;
+    }
     return req;
 })
-
-
 
 export const fetchUsers = () => API.get('/user');
 export const userChats = (id) => API.get(`/chat/${id}`);

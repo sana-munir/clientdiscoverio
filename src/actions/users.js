@@ -4,7 +4,6 @@ import * as api from '../api/index.js';
 export const getUsers = () => async (dispatch) => {
     try {
       const { data } = await api.fetchUsers();
-      console.log("hello");
       dispatch({ type: FETCH_USERS, payload: data });
     } catch (error) {
       console.log(error.message);
@@ -13,7 +12,6 @@ export const getUsers = () => async (dispatch) => {
 export const deleteUser = (id) => async (dispatch) => {
     try {
       await api.deleteUser(id);
-  
       dispatch({ type: UDELETE, payload: id });
       alert("User deleted succcessfully.")
     } catch (error) {
